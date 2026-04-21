@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Invalid signature",
+      "method": "POST",
+      "path": "/",
+      "body": {"amount": "99", "currency": "RUB", "order_id": "test-123", "sign": "wrong", "status": "success"},
+      "expectedStatus": 400
+    }
+  ]
+}
